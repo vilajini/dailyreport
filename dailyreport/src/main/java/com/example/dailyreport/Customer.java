@@ -1,13 +1,12 @@
-package entity;
+package com.example.dailyreport;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Data
-@Entity
-@Table(name = "customers")
-public class Customer {
 
+@Table(name = "customers")
+@Data
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")

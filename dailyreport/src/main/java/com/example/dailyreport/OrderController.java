@@ -1,24 +1,16 @@
-package controller;
+package com.example.dailyreport;
 
 
 
-
-import entity.Order;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.OrderService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/orders")
-public class OrderController {
 
+public class OrderController {
     @Autowired
     private OrderService orderService;
 
@@ -33,7 +25,14 @@ public class OrderController {
     }
 
     @GetMapping("/date/{date}")
+    public List<Order> getOrdersByDate() {
+        return getOrdersByDate(null);
+    }
+
+    @GetMapping("/date/{date}")
     public List<Order> getOrdersByDate(@PathVariable String date) {
         return orderService.getOrdersByDate(date);
     }
+
+
 }

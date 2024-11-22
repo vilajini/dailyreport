@@ -1,13 +1,11 @@
-package entity;
+package com.example.dailyreport;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity
 @Table(name = "products")
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id")

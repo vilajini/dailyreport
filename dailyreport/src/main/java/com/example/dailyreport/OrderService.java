@@ -1,14 +1,14 @@
-package service;
+package com.example.dailyreport;
 
-import entity.Order;
+import com.example.dailyreport.Order;
+
 import org.springframework.stereotype.Service;
-import repository.OrderRepository;
+
 
 import java.util.List;
 
 @Service
 public class OrderService {
-
     private final OrderRepository orderRepository;
 
     public OrderService(OrderRepository orderRepository) {
